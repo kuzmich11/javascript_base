@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        // function transform() {
+        //     let number = prompt('Введите число от 0 до 999');
+
+        //     if (number >= 0 && number <= 999) {
+        //         this.units = parseInt(number / 100);
+        //         this.tens = parseInt((number - this.units * 100) / 10);
+        //         this.hundred = parseInt(number - this.tens * 10 - this.units * 100);
+        //         // let obj = new Number (1, 2, 3); //(units, tens, hundred);
+        //         console.log(namber);
+        //         return (namber);
+        //     } else {
+        //         console.log('Вы ввели не верное число');
+        //         return null;
+        //     }
+        // }
+
+        let num = Number(prompt('Введите число от 0 до 999'));
+        let num1 = '';
+        class ObjNum {
+            constructor() {
+                this.hundred = parseInt(num / 100);
+                this.tens = parseInt((num - this.hundred * 100) / 10);
+                this.units = parseInt(num - this.tens * 10 - this.hundred * 100);
+            }
+
+            show() {
+                console.log(this)
+            }
+        }
+
+        function transform() {
+
+            if (num >= 0 && num <= 999) {
+                num1 = new ObjNum();
+                num1.show();
+                // console.log (num1);
+            } else {
+                console.log('Вы ввели не верное число');
+                return null;
+            }
+        }
+
+        transform();
+    </script>
+</body>
+
+</html>
